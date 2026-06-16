@@ -9,14 +9,13 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: #b1b1ba;
-    background: linear-gradient(135px, #0b0b0e, #1a0f02, #0b0b0e, #291400, #0b0b0e);
+    background: linear-gradient(135deg, #0b0b0e 0%, #241200 40%, #0b0b0e 70%, #3d1d00 100%);
     background-size: 400% 400%;
-    animation: waveBackground 15s ease infinite;
+    animation: waveBackground 10s ease infinite;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
-/* Анимация градиентных волн на фоне */
 @keyframes waveBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -38,17 +37,22 @@ body {
     padding: 0 1.25rem;
     position: relative;
     z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
 }
 
-/* Шапка */
-.header { margin-bottom: 3rem; }
+.header, .footer { width: 100%; }
+
 .header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255, 145, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 145, 0, 0.15);
 }
+
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
@@ -57,6 +61,7 @@ body {
     text-decoration: none;
     letter-spacing: 2px;
 }
+
 .header-nav { display: flex; gap: 2rem; }
 .header-nav-link {
     font-size: 1.125rem;
@@ -67,112 +72,81 @@ body {
 }
 .header-nav-link:hover, .header-nav-link.active {
     color: #ff9100;
-    text-shadow: 0 0 10px rgba(255, 145, 0, 0.5);
+    text-shadow: 0 0 15px rgba(255, 145, 0, 0.6);
 }
 
-/* Контент */
-.content { max-width: 45rem; margin-bottom: 3rem; }
+.content { max-width: 45rem; width: 100%; }
 .title { font-size: 2.5rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
 .subtitle { font-size: 1.5rem; font-weight: 700; color: #868695; margin-bottom: 2rem; }
-.subtitle span { color: #ff9100; }
-.text { font-size: 1.125rem; line-height: 1.8; }
+.subtitle span { color: #ff9100; text-shadow: 0 0 10px rgba(255, 145, 0, 0.3); }
 
-/* Убрали карточки, вернули аккуратные буллеты */
 .offer-cards { display: block; margin: 1.5rem 0 2.5rem; }
-.offer-card { background: none; border: none; padding: 0; margin-bottom: 1rem; border-radius: 0; transition: none; box-shadow: none; }
+/* Убрали старые серые карточки и рамки */
+.offer-card { background: none !important; border: none !important; padding: 0 !important; margin-bottom: 1.25rem !important; box-shadow: none !important; color: #b1b1ba; font-size: 1.125rem; line-height: 1.6; }
 .offer-card strong { color: #fff; }
 
-/* Кнопка */
 .btn {
     display: inline-block;
     padding: 1.1rem 2.5rem;
-    background: linear-gradient(90px, #ff9100, #ff6a00);
+    background: linear-gradient(90deg, #ff9100, #ff6a00);
     border-radius: 5px;
     font-size: 1.125rem;
     color: #0b0b0e;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    box-shadow: 0 4px 20px rgba(255, 106, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 106, 0, 0.4);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 30px rgba(255, 106, 0, 0.6);
+    box-shadow: 0 6px 30px rgba(255, 106, 0, 0.8);
 }
 
-/* Портфолио */
-.wrapper {
-    margin-top: 2rem;
-    padding: 2rem;
-    background-color: rgba(19, 19, 26, 0.7);
-    border: 1px solid rgba(255, 145, 0, 0.1);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-}
-ol { padding-left: 1.25rem; }
-ol li { margin-bottom: 1.25rem; font-size: 1.125rem; }
-.custom-link {
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 145, 0, 0.2);
-    transition: color 0.2s, border-color 0.2s;
-}
-.custom-link:hover { color: #ff9100; border-bottom-color: #ff9100; }
-
-/* Подвал */
-.footer { padding-top: 1.5rem; border-top: 1px solid rgba(255, 145, 0, 0.1); }
+.footer { padding-top: 1.5rem; border-top: 1px solid rgba(255, 145, 0, 0.15); }
 .contacts { display: flex; gap: 3rem; }
 .contacts-link { display: inline-flex; align-items: center; font-size: 1.125rem; font-weight: 700; color: #fff; text-decoration: none; transition: color 0.2s; }
 .contacts-link:hover { color: #ff9100; }
 
-/* МАСКОТ РОБОТ (Следит за мышью) */
+/* ЖИВОЙ МАСКОТ РОБОТ */
 .mascot-container {
-    position: absolute;
-    right: 10%;
-    top: 35%;
-    width: 200px;
-    height: 200px;
-    z-index: 10;
+    width: 220px;
+    height: 220px;
+    position: relative;
+    flex-shrink: 0;
 }
 .robot {
-    width: 150px;
-    height: 150px;
-    background: #1a1a24;
+    width: 180px;
+    height: 180px;
+    background: #13131a;
     border: 3px solid #ff9100;
-    border-radius: 40px;
-    position: relative;
-    box-shadow: 0 0 30px rgba(255, 145, 0, 0.2);
+    border-radius: 45px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 0 35px rgba(255, 145, 0, 0.25);
     animation: floatRobot 4s ease-in-out infinite;
 }
 @keyframes floatRobot {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
 }
-.robot-ears {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 170px;
-    left: -13px;
-    top: 60px;
-}
-.ear { width: 10px; height: 30px; background: #ff9100; border-radius: 5px; }
 .robot-face {
-    width: 110px;
-    height: 70px;
+    width: 120px;
+    height: 75px;
     background: #0b0b0e;
-    border-radius: 20px;
-    margin: 35px auto 0;
+    border-radius: 22px;
+    margin: 45px auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
+    border: 1px solid rgba(255, 145, 0, 0.1);
 }
 .eye-socket {
-    width: 30px;
-    height: 30px;
-    background: #1a1a24;
+    width: 32px;
+    height: 32px;
+    background: #191922;
     border-radius: 50%;
     position: relative;
     overflow: hidden;
@@ -183,14 +157,15 @@ ol li { margin-bottom: 1.25rem; font-size: 1.125rem; }
     background: #ff9100;
     border-radius: 50%;
     position: absolute;
-    left: 8px;
-    top: 8px;
-    box-shadow: 0 0 10px #ff9100;
+    left: 9px;
+    top: 9px;
+    box-shadow: 0 0 12px #ff9100;
     transition: transform 0.05s linear;
 }
 
 @media (max-width: 992px) {
-    .mascot-container { position: relative; right: auto; top: auto; margin: 2rem auto; display: flex; justify-content: center; }
+    .container { flex-direction: column; text-align: center; gap: 30px; }
+    .mascot-container { margin: 0 auto; order: -1; }
 }
 
 
