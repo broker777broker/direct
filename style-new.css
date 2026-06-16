@@ -1,0 +1,208 @@
+@import url('https://googleapis.com');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #b1b1ba;
+    background-color: #0b0b0e;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 3.75rem 0 2.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #202029;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+}
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-nav-link {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #868695;
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.header-nav-link:hover,
+.header-nav-link.active {
+    color: #ffcc00;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
+.content {
+    max-width: 50rem;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #868695;
+    margin-bottom: 2rem;
+}
+
+.subtitle span {
+    color: #ffcc00;
+}
+
+.text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.text p {
+    margin-bottom: 1.5rem;
+}
+
+.text strong {
+    color: #fff;
+}
+
+/* КАРТОЧКИ ДЛЯ НОВОГО ВИЗУАЛА */
+.offer-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 1.5rem 0 2.5rem;
+}
+
+.offer-card {
+    background: #13131a;
+    border: 1px solid #202029;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.offer-card:hover {
+    border-color: #ffcc00;
+    transform: translateX(5px);
+    box-shadow: 0 4px 20px rgba(255, 204, 0, 0.05);
+}
+
+/* Кнопки с неоном */
+.btn {
+    display: inline-block;
+    padding: 1.1rem 2.5rem;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    color: #0b0b0e;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.2);
+    transition: background-color 0.2s linear, transform 0.2s linear, box-shadow 0.2s linear;
+}
+
+.btn:hover {
+    background-color: #ffe066;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 204, 0, 0.4);
+}
+
+.wrapper {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #13131a;
+    border: 1px solid #202029;
+    border-radius: 8px;
+}
+
+ol {
+    padding-left: 1.25rem;
+}
+
+ol li {
+    margin-bottom: 1.25rem;
+    font-size: 1.125rem;
+}
+
+.custom-link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #202029;
+    transition: color 0.2s, border-color 0.2s;
+    font-weight: 400;
+}
+
+.custom-link:hover {
+    color: #ffcc00;
+    border-bottom-color: #ffcc00;
+}
+
+.footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid #202029;
+}
+
+.contacts {
+    display: flex;
+    gap: 3rem;
+}
+
+.contacts-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.contacts-link:hover {
+    color: #ffcc00;
+}
+
+@media (max-width: 768px) {
+    .header-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .contacts { flex-direction: column; gap: 1rem; }
+    .title { font-size: 2rem; }
+}
