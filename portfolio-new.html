@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Портфолио — Новый визуал</title>
+    <title>Портфолио — Hyperion production</title>
     <link rel="stylesheet" href="./style-new.css">
 </head>
 <body>
@@ -16,29 +16,59 @@
             <a class="header-nav-link active" href="./portfolio-new.html">Портфолио</a>
         </nav>
     </div></div></header>
-    <div class="container"><main class="content">
-        <div class="content-header"><h1 class="title">Портфолио</h1></div>
-        <div class="text">
-            <p>Нажмите на интересующий кейс, чтобы запросить подробную статистику в Telegram:</p>
-            <div class="wrapper">
-            <ol>
-                <li><a class="custom-link" href="https://t.me.">Интернет-магазин модной женской одежды</a></li>
-                <li><a class="custom-link" href="https://t.me.">Измельчители древесины</a></li>
-                <li><a class="custom-link" href="https://t.me.">Стоматология в Волжском</a></li>
-                <li><a class="custom-link" href="https://t.me.">Частная мед клиника в Москве 1</a></li>
-                <li><a class="custom-link" href="https://t.me.">Частная мед клиника в Москве 2</a></li>
-                <li><a class="custom-link" href="https://t.me.">Узаконивание перепланировки в Москве</a></li>
-                <li><a class="custom-link" href="https://t.me.">Банный бизнес</a></li>
-                <li><a class="custom-link" href="https://t.me.">Питомник Туй</a></li>
-            </ol>
+
+    <div class="container">
+        <main class="content">
+            <div class="content-header"><h1 class="title">Портфолио</h1></div>
+            <div class="text">
+                <p style="margin-bottom: 25px;">Нажмите на интересующий кейс, чтобы запросить подробную статистику напрямую в Telegram:</p>
+                <div class="wrapper" style="background: rgba(19, 19, 26, 0.4); border: 1px solid rgba(255, 145, 0, 0.15); padding: 30px; border-radius: 8px;">
+                <ol style="padding-left: 20px; line-height: 2;">
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Интернет-магазин модной женской одежды</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Измельчители древесины</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Стоматология в Волжском</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Частная мед клиника в Москве 1</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Частная мед клиника в Москве 2</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Узаконивание перепланировки в Москве</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Банный бизнес</a></li>
+                    <li style="margin-bottom: 15px;"><a class="custom-link" style="color: #fff; text-decoration: none; border-bottom: 1px dashed rgba(255,145,0,0.4); padding-bottom: 2px; font-weight: 700;" href="https://t.me.">Питомник Туй</a></li>
+                </ol>
+                </div>
+            </div>
+            <a class="btn" href="https://t.me">Связаться с нами</a>
+        </main>
+
+        <div class="mascot-container">
+            <div class="robot-ears"><div class="ear"></div><div class="ear"></div></div>
+            <div class="robot">
+                <div class="robot-face">
+                    <div class="eye-socket"><div class="pupil"></div></div>
+                    <div class="eye-socket"><div class="pupil"></div></div>
+                </div>
             </div>
         </div>
-        <a class="btn" href="https://t.me">Связаться с нами</a>
-    </main></div>
+    </div>
+
     <footer class="footer"><div class="container"><div class="contacts">
         <a class="contacts-link" href="mailto:hyperion-production@yandex.ru">hyperion-production@yandex.ru</a>
         <a class="contacts-link" href="tel:+79998895026">+7 (999) 889-50-26</a>
     </div></div></footer>
 </div>
+
+<script>
+    const pupils = document.querySelectorAll('.pupil');
+    document.addEventListener('mousemove', (e) => {
+        pupils.forEach(pupil => {
+            const rect = pupil.getBoundingClientRect();
+            const eyeX = rect.left + rect.width / 2;
+            const eyeY = rect.top + rect.height / 2;
+            const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+            const distance = Math.min(6, Math.hypot(e.clientX - eyeX, e.clientY - eyeY) / 30);
+            const x = distance * Math.cos(angle);
+            const y = distance * Math.sin(angle);
+            pupil.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+</script>
 </body>
 </html>
